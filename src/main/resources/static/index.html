@@ -19,6 +19,16 @@
 <script>
     var btn = document.getElementById('btn');
     btn.addEventListener('click', fetchData);
+    var inputfield = document.getElementById('customerid');
+    inputfield.addEventListener("keypress", function(event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("btn").click();
+        }
+    });
 
     function fetchData() {
         var $name = document.getElementById("customerid").value;
