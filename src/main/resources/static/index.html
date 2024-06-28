@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;max-width: 320px;">
+        <h3>Super einfache Kundendatenbank</h3>
+        <input type="text" id="customerid" style="width: 300px;" placeholder="Kunden-Id eingeben">
+        <input type="submit" id="btn" value="Absenden">
+        <br><br><br>
+        <label>Ergebnis: </label>
+        <p id="output"></p>
+    </div>
+</div>
+
+<script>
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click', fetchData);
+
+    function fetchData() {
+        var $name = document.getElementById("customerid").value;
+        fetch('http://localhost:8080/kunde?id=' + $name, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Success:', data);
+                document.getElementById('output').innerText = data;
+            })
+    }
+</script>
+</body>
+</html>
