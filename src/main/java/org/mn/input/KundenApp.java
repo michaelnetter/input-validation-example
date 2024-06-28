@@ -20,10 +20,13 @@ public class KundenApp {
     }
 
     @GetMapping("/kunde")
+    // Receive input from user
     public ResponseEntity<String> getFile(String id) throws IOException {
 
         // Build file path
         String path = "Kunden/" + id + ".txt";
+
+        // Get file from resources folder
         File file = new File(Resources.getResource(path).getFile());
 
         // Read file

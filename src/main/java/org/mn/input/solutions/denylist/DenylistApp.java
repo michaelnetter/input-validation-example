@@ -31,7 +31,11 @@ public class DenylistApp {
 
         // Build file path
         String path = "Kunden/" + id + ".txt";
+
+        // Get file from resources folder
         File file = new File(Resources.getResource(path).getFile());
+
+        // Read file
         String content = Files.readString(file.toPath());
 
         // Return content

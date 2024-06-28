@@ -36,6 +36,8 @@ public class AllowlistApp {
 
         // Build file path
         String path = "Kunden/" + id + ".txt";
+
+        // Get file from resources folder
         File file = new File(Resources.getResource(path).getFile());
 
         // Read file
