@@ -1,4 +1,4 @@
-package org.mn.input;
+package org.mn.input.vulnerable;
 
 import com.google.common.io.Resources;
 import org.springframework.boot.SpringApplication;
