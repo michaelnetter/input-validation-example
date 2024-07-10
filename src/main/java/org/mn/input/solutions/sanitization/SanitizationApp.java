@@ -32,7 +32,6 @@ public class SanitizationApp {
             return ResponseEntity.badRequest().body("Invalid id");
         }
 
-
         // Get file from resources folder
         File file = new File(Resources.getResource(path).getFile());
 
