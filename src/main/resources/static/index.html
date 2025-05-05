@@ -32,7 +32,9 @@
 
     function fetchData() {
         var $name = document.getElementById("customerid").value;
-        fetch('http://localhost:8080/kunde?id=' + $name, {
+        var $base = window.location.origin;
+        var $url  = $base + '/kunde?id=' + $name;
+        fetch($url, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
